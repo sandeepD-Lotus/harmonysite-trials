@@ -10,10 +10,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-full border-2 border-harmony-cyan flex items-center justify-center">
-                <span className="text-harmony-cyan font-bold text-lg">H</span>
-              </div>
+            <Link to="/" className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png" 
+                alt="Harmony Consulting Solutions Logo" 
+                className="w-12 h-12"
+              />
               <div>
                 <span className="text-white font-bold text-lg">HARMONY</span>
                 <div className="text-harmony-cyan text-xs font-medium">CONSULTING SOLUTIONS</div>
