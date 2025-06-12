@@ -128,6 +128,23 @@
     border-color: hsl(var(--harmony-cyan));
   }
 
+  /* Shadow utilities for harmony colors */
+  .shadow-harmony-cyan {
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.3), 0 4px 6px -2px rgba(0, 255, 255, 0.1);
+  }
+  
+  .shadow-harmony-cyan\/20 {
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.2), 0 4px 6px -2px rgba(0, 255, 255, 0.05);
+  }
+  
+  .shadow-harmony-cyan\/30 {
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.3), 0 4px 6px -2px rgba(0, 255, 255, 0.1);
+  }
+  
+  .shadow-harmony-cyan\/50 {
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.5), 0 4px 6px -2px rgba(0, 255, 255, 0.2);
+  }
+
   /* Professional Animations */
   @keyframes fade-in {
     from {
@@ -215,11 +232,21 @@
 
   /* Professional hover effects */
   .professional-card {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-harmony-cyan/20;
+    transition: all 0.3s ease;
+  }
+  
+  .professional-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 255, 255, 0.2);
   }
 
   .professional-button {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-harmony-cyan/50;
+    transition: all 0.3s ease;
+  }
+  
+  .professional-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.5);
   }
 
   /* Floating elements */
