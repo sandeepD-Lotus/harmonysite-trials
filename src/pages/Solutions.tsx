@@ -1,39 +1,54 @@
 
 import React from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Solutions = () => {
   const solutions = [
     {
       title: "Business Consulting",
       description: "Strategic guidance to optimize operations, improve efficiency, and drive sustainable growth.",
-      features: ["Strategic Planning", "Process Optimization", "Change Management", "Performance Analytics"]
+      features: ["Strategic Planning", "Process Optimization", "Change Management", "Performance Analytics"],
+      benefits: ["Increased Efficiency", "Cost Reduction", "Risk Mitigation", "Competitive Advantage"],
+      icon: "BC"
     },
     {
       title: "Market Research & Analytics",
       description: "Data-driven insights to understand markets, customers, and competitive landscapes.",
-      features: ["Market Analysis", "Customer Research", "Competitive Intelligence", "Data Visualization"]
+      features: ["Market Analysis", "Customer Research", "Competitive Intelligence", "Data Visualization"],
+      benefits: ["Informed Decisions", "Market Opportunities", "Customer Insights", "Trend Identification"],
+      icon: "MR"
     },
     {
       title: "AI Integration",
       description: "Cutting-edge artificial intelligence solutions to automate processes and enhance decision-making.",
-      features: ["Machine Learning", "Process Automation", "Predictive Analytics", "AI Strategy"]
+      features: ["Machine Learning", "Process Automation", "Predictive Analytics", "AI Strategy"],
+      benefits: ["Automation", "Predictive Insights", "Cost Savings", "Innovation Edge"],
+      icon: "AI"
     },
     {
       title: "Digital Transformation",
       description: "Comprehensive technology modernization to digitize operations and improve customer experience.",
-      features: ["Cloud Migration", "System Integration", "Digital Strategy", "Technology Roadmap"]
+      features: ["Cloud Migration", "System Integration", "Digital Strategy", "Technology Roadmap"],
+      benefits: ["Digital Efficiency", "Scalability", "Customer Experience", "Future-Ready"],
+      icon: "DT"
     },
     {
       title: "Strategic Growth Solutions",
       description: "Scalable frameworks and methodologies to accelerate business growth and market expansion.",
-      features: ["Growth Strategy", "Market Entry", "Scale Operations", "Investment Planning"]
+      features: ["Growth Strategy", "Market Entry", "Scale Operations", "Investment Planning"],
+      benefits: ["Revenue Growth", "Market Expansion", "Operational Scale", "Investment ROI"],
+      icon: "SG"
     },
     {
       title: "Technology Consulting",
       description: "Expert guidance on technology selection, implementation, and optimization for business success.",
-      features: ["Tech Assessment", "Solution Architecture", "Implementation Support", "Training & Support"]
+      features: ["Tech Assessment", "Solution Architecture", "Implementation Support", "Training & Support"],
+      benefits: ["Technology Alignment", "Implementation Success", "Team Readiness", "Ongoing Support"],
+      icon: "TC"
     }
   ];
 
@@ -45,28 +60,47 @@ const Solutions = () => {
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-harmony-cyan mb-6">Our Solutions</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive consulting services designed to transform your business and drive sustainable growth through innovation and strategic implementation.
+              Comprehensive consulting services designed to transform your business and drive sustainable growth 
+              through innovation and strategic implementation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Solutions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {solutions.map((solution, index) => (
               <Card key={index} className="bg-harmony-navy/50 border border-harmony-cyan/30 hover:border-harmony-cyan transition-all duration-300">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-harmony-cyan mb-4">
+                  <div className="w-16 h-16 bg-harmony-cyan rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">{solution.icon}</span>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-harmony-cyan mb-4 text-center">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-300 mb-6 leading-relaxed text-center">
                     {solution.description}
                   </p>
-                  <div className="space-y-2">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                    {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center">
-                        <div className="w-2 h-2 bg-harmony-cyan rounded-full mr-3"></div>
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </div>
-                    ))}
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                      {solution.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center mb-2">
+                          <div className="w-2 h-2 bg-harmony-cyan rounded-full mr-3"></div>
+                          <span className="text-gray-300 text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-white font-semibold mb-3">Benefits:</h4>
+                      {solution.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center mb-2">
+                          <div className="w-2 h-2 bg-harmony-cyan rounded-full mr-3"></div>
+                          <span className="text-gray-300 text-sm">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -74,7 +108,7 @@ const Solutions = () => {
           </div>
 
           {/* Process Section */}
-          <div className="mt-20">
+          <div className="mb-20">
             <h2 className="text-4xl font-bold text-harmony-cyan mb-12 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
@@ -93,8 +127,28 @@ const Solutions = () => {
               ))}
             </div>
           </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <Card className="bg-harmony-navy/50 border border-harmony-cyan/30 max-w-4xl mx-auto">
+              <CardContent className="p-12">
+                <h3 className="text-3xl font-bold text-harmony-cyan mb-6">Ready to Transform Your Business?</h3>
+                <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                  Contact us today to discuss how our solutions can drive your organization's growth and success.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-harmony-cyan hover:bg-harmony-cyan/80 text-white px-8 py-3 text-lg"
+                >
+                  <Link to="/connect">Contact Us Today</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

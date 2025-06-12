@@ -1,6 +1,6 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
@@ -162,6 +162,7 @@ const Connect = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
