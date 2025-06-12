@@ -1,0 +1,42 @@
+
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+
+const CTASection = () => {
+  return (
+    <section className="py-20 harmony-gradient relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 right-10 w-24 h-24 border border-harmony-cyan rounded-full"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 border border-harmony-cyan rounded-full"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-harmony-cyan mb-8 leading-tight">
+            Grab the reader's attention with a<br />
+            descriptive line that hypes your event,<br />
+            product or service. A short and<br />
+            relevant quote works, too!
+          </h2>
+          
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Ready to transform your business with cutting-edge solutions? 
+            Let's discuss how Harmony Consulting can drive your success.
+          </p>
+          
+          <Button
+            asChild
+            size="lg"
+            className="bg-harmony-cyan hover:bg-harmony-cyan/80 text-white px-8 py-3 text-lg"
+          >
+            <Link to="/connect">Get Started Today</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;
