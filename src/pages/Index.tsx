@@ -39,10 +39,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Floating background elements */}
-        <div className="floating-element w-16 h-16 top-10 right-10 animate-float"></div>
-        <div className="floating-element w-12 h-12 bottom-10 left-10 animate-float" style={{animationDelay: '-2s'}}></div>
       </div>
 
       {/* What We Offer Section */}
@@ -89,10 +85,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Floating background elements */}
-        <div className="floating-element w-20 h-20 top-20 left-5 animate-float"></div>
-        <div className="floating-element w-14 h-14 bottom-20 right-5 animate-float" style={{animationDelay: '-1s'}}></div>
       </section>
 
       {/* Global Financial Insights Section */}

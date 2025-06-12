@@ -88,10 +88,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
-      {/* Floating Background Elements */}
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-harmony-cyan/5 rounded-full -translate-x-16 translate-y-16 animate-pulse"></div>
-      <div className="absolute top-0 right-0 w-24 h-24 bg-harmony-cyan/5 rounded-full translate-x-12 -translate-y-12 animate-pulse" style={{animationDelay: '1s'}}></div>
     </footer>
   );
 };

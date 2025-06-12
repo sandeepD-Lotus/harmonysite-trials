@@ -6,14 +6,6 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <section className="min-h-screen harmony-gradient relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="floating-element w-32 h-32 top-20 left-10 animate-float"></div>
-        <div className="floating-element w-20 h-20 top-40 right-20 animate-float" style={{animationDelay: '-1s'}}></div>
-        <div className="floating-element w-16 h-16 bottom-40 left-1/4 animate-float" style={{animationDelay: '-3s'}}></div>
-        <div className="floating-element w-24 h-24 bottom-20 right-1/3 animate-float" style={{animationDelay: '-2s'}}></div>
-      </div>
-      
       {/* Animated grid overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-r from-transparent via-harmony-cyan to-transparent animate-pulse"></div>
@@ -57,11 +49,6 @@ const HeroSection = () => {
               {/* Floating overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-harmony-cyan/20 to-harmony-teal/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            
-            {/* Decorative elements around image */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-harmony-cyan rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -right-4 w-6 h-6 border-2 border-harmony-cyan rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-harmony-cyan rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
           </div>
         </div>
       </div>
