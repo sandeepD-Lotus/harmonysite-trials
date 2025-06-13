@@ -65,21 +65,21 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Sarah Johnson',
+                  name: 'Martha Blevins',
                   role: 'Chief Executive Officer',
-                  image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=face',
+                  image: '/lovable-uploads/martha Blevins.png',
                   bio: 'Visionary leader with 15+ years in strategic consulting and business transformation. Sarah has led over 200 successful digital transformation projects across Fortune 500 companies.'
                 },
                 {
                   name: 'Michael Chen',
                   role: 'Chief Technology Officer',
-                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=face',
+                  image: '/lovable-uploads/Devin pratt.png',
                   bio: 'Technology expert specializing in AI, cloud computing, and digital innovation. Michael holds multiple patents in machine learning and has published extensively in tech journals.'
                 },
                 {
                   name: 'Emily Rodriguez',
                   role: 'Chief Operations Officer',
-                  image: 'https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=face',
+                  image: '/lovable-uploads/murad Naser.png',
                   bio: 'Operations specialist focused on process optimization and client success. Emily has streamlined operations for over 100 organizations, improving efficiency by an average of 40%.'
                 }
               ].map((member, index) => (
