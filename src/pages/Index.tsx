@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -5,6 +6,8 @@ import ServicesSection from '@/components/ServicesSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import { Briefcase, BarChart3, Cpu, TrendingUp } from 'lucide-react';
+
 const Index = () => {
   return <div className="min-h-screen">
       <Navigation />
@@ -12,10 +15,18 @@ const Index = () => {
       
       {/* Harmony Introduction Section */}
       <div className="py-20 harmony-gradient relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-right">
-              <h2 className="text-4xl text-harmony-cyan mb-6 font-normal text-right text-slate-50">Who We Are</h2>
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/dcc1ed5a-29bc-4a62-9398-e0a8ded4098a.png" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-harmony-dark/80 via-harmony-navy/70 to-harmony-teal/60"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <h2 className="text-4xl text-harmony-cyan mb-6 font-normal">Who We Are</h2>
+            <div className="max-w-4xl mx-auto">
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Harmony Consulting Solutions empowers businesses through insight, innovation, and intelligence. 
                 We specialize in business consulting, market research, AI integration, and strategic growth solutions 
@@ -26,11 +37,6 @@ const Index = () => {
                 various industries, leveraging cutting-edge technology and proven methodologies to deliver 
                 exceptional results for our clients.
               </p>
-            </div>
-            <div className="animate-fade-in professional-card" style={{
-            animationDelay: '0.3s'
-          }}>
-              
             </div>
           </div>
         </div>
@@ -49,7 +55,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-animation">
             <div className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300 professional-card group">
               <div className="w-16 h-16 bg-harmony-cyan rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-glow">
-                <span className="text-white font-bold text-lg">BC</span>
+                <Briefcase className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-harmony-cyan mb-3">Business Consulting</h3>
               <p className="text-gray-300 text-sm">Strategic guidance and operational excellence</p>
@@ -57,7 +63,7 @@ const Index = () => {
             
             <div className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300 professional-card group">
               <div className="w-16 h-16 bg-harmony-cyan rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-glow">
-                <span className="text-white font-bold text-lg">MR</span>
+                <BarChart3 className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-harmony-cyan mb-3">Market Research</h3>
               <p className="text-gray-300 text-sm">Data-driven insights and analytics</p>
@@ -65,7 +71,7 @@ const Index = () => {
             
             <div className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300 professional-card group">
               <div className="w-16 h-16 bg-harmony-cyan rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-glow">
-                <span className="text-white font-bold text-lg">AI</span>
+                <Cpu className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-harmony-cyan mb-3">AI Integration</h3>
               <p className="text-gray-300 text-sm">Cutting-edge artificial intelligence solutions</p>
@@ -73,7 +79,7 @@ const Index = () => {
             
             <div className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300 professional-card group">
               <div className="w-16 h-16 bg-harmony-cyan rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-glow">
-                <span className="text-white font-bold text-lg">SG</span>
+                <TrendingUp className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-harmony-cyan mb-3">Strategic Growth</h3>
               <p className="text-gray-300 text-sm">Scalable solutions for sustainable expansion</p>
@@ -143,4 +149,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
