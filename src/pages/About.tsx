@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -16,7 +15,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Company Overview */}
           <div className="mb-20">
             <h2 className="text-4xl font-bold text-harmony-cyan mb-8 text-center">Company Overview</h2>
             <div className="max-w-4xl mx-auto">
@@ -40,7 +38,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Mission & Vision */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             <div className="bg-harmony-navy/50 p-8 rounded-lg border border-harmony-cyan/30">
               <h2 className="text-3xl font-bold text-harmony-cyan mb-6">Our Mission</h2>
@@ -63,7 +60,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Team Section */}
           <div className="mb-20">
             <h2 className="text-4xl font-bold text-harmony-cyan mb-12 text-center">Leadership Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -71,25 +67,29 @@ const About = () => {
                 {
                   name: 'Sarah Johnson',
                   role: 'Chief Executive Officer',
-                  initials: 'SJ',
+                  image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=face',
                   bio: 'Visionary leader with 15+ years in strategic consulting and business transformation. Sarah has led over 200 successful digital transformation projects across Fortune 500 companies.'
                 },
                 {
                   name: 'Michael Chen',
                   role: 'Chief Technology Officer',
-                  initials: 'MC',
+                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=face',
                   bio: 'Technology expert specializing in AI, cloud computing, and digital innovation. Michael holds multiple patents in machine learning and has published extensively in tech journals.'
                 },
                 {
                   name: 'Emily Rodriguez',
                   role: 'Chief Operations Officer',
-                  initials: 'ER',
+                  image: 'https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=face',
                   bio: 'Operations specialist focused on process optimization and client success. Emily has streamlined operations for over 100 organizations, improving efficiency by an average of 40%.'
                 }
               ].map((member, index) => (
                 <div key={index} className="text-center bg-harmony-navy/50 p-8 rounded-lg border border-harmony-cyan/30">
-                  <div className="w-32 h-32 bg-harmony-cyan rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">{member.initials}</span>
+                  <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full border-4 border-harmony-cyan">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
                   <p className="text-harmony-cyan font-medium mb-4">{member.role}</p>
@@ -99,25 +99,52 @@ const About = () => {
             </div>
           </div>
 
-          {/* Our Trusted Business Clients */}
           <div>
             <h2 className="text-4xl font-bold text-harmony-cyan mb-12 text-center">Our Trusted Business Clients</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                'Fortune 500 Manufacturing Corp',
-                'Global Tech Solutions Inc',
-                'Healthcare Innovation Group',
-                'Financial Services Alliance',
-                'Renewable Energy Consortium',
-                'Retail Excellence Network',
-                'Transportation Systems Ltd',
-                'Education Technology Partners'
+                {
+                  name: 'Fortune 500 Manufacturing Corp',
+                  image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Global Tech Solutions Inc',
+                  image: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Healthcare Innovation Group',
+                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Financial Services Alliance',
+                  image: 'https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Renewable Energy Consortium',
+                  image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Retail Excellence Network',
+                  image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Transportation Systems Ltd',
+                  image: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=400&fit=crop&crop=center'
+                },
+                {
+                  name: 'Education Technology Partners',
+                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=center'
+                }
               ].map((client, index) => (
                 <div key={index} className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300">
-                  <div className="w-16 h-16 bg-harmony-navy rounded-full mx-auto mb-4 border-2 border-harmony-cyan flex items-center justify-center">
-                    <span className="text-harmony-cyan text-sm font-bold">{client.split(' ').map(w => w[0]).join('')}</span>
+                  <div className="w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full border-2 border-harmony-cyan">
+                    <img 
+                      src={client.image} 
+                      alt={client.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-gray-300 text-sm font-medium">{client}</p>
+                  <p className="text-gray-300 text-sm font-medium">{client.name}</p>
                 </div>
               ))}
             </div>
