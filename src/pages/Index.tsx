@@ -15,7 +15,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-right">
-              <h2 className="text-4xl text-harmony-cyan mb-6 text-slate-50 font-normal text-right">Who We Are</h2>
+              <h2 className="text-4xl text-harmony-cyan mb-6 font-normal text-right text-slate-50">Who We Are</h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Harmony Consulting Solutions empowers businesses through insight, innovation, and intelligence. 
                 We specialize in business consulting, market research, AI integration, and strategic growth solutions 
