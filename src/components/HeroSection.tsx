@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="relative animate-fade-in" style={{animationDelay: '0.3s'}}>
             <div className="relative group">
               <img
-                src="/lovable-uploads/c833d23d-2de1-48de-9ef6-c41f8edfa256.png"
+                src="/lovable-uploads/Hands_on_a_laptop_keyboard_(Unsplash).jpg"
                 alt="Business transformation"
                 className="w-full h-auto rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-harmony-cyan/30"
               />
