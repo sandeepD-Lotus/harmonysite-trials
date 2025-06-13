@@ -79,11 +79,15 @@
     @apply border-border;
   }
 
-  /* Advanced Smooth Scrolling */
+  /* Mobile-first responsive design */
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
     overflow-x: hidden;
+    /* Ensure proper mobile viewport */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -91,6 +95,30 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* Prevent horizontal scroll on mobile */
+    min-width: 320px;
+    /* Minimum mobile width */
+    width: 100%;
+    position: relative;
+  }
+
+  /* Mobile-optimized scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+    /* Better momentum scrolling on iOS */
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure no elements overflow on mobile */
+  img, video, canvas, iframe, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Mobile-friendly touch targets */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+    /* Prevent double-tap zoom */
   }
 
   /* Advanced scroll snap for sections */
@@ -99,14 +127,10 @@
     scroll-snap-stop: always;
   }
 
-  /* Smooth momentum scrolling for iOS */
-  * {
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Custom scrollbar */
+  /* Mobile-optimized custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    /* Thinner on mobile */
   }
 
   ::-webkit-scrollbar-track {
@@ -115,11 +139,24 @@
 
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, hsl(var(--harmony-cyan)), hsl(var(--harmony-teal)));
-    border-radius: 4px;
+    border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, hsl(var(--harmony-light-cyan)), hsl(var(--harmony-cyan)));
+  }
+
+  /* Mobile breakpoint utilities */
+  @media (max-width: 640px) {
+    html {
+      scroll-padding-top: 60px;
+      /* Smaller header on mobile */
+    }
+    
+    body {
+      font-size: 16px;
+      /* Prevent zoom on form inputs */
+    }
   }
 }
 
@@ -167,9 +204,15 @@
     border-color: hsl(var(--harmony-cyan));
   }
 
-  /* Shadow utilities for harmony colors */
+  /* Mobile-responsive shadow utilities */
   .shadow-harmony-cyan {
     box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.3), 0 4px 6px -2px rgba(0, 255, 255, 0.1);
+  }
+  
+  @media (max-width: 640px) {
+    .shadow-harmony-cyan {
+      box-shadow: 0 5px 10px -2px rgba(0, 255, 255, 0.2), 0 2px 4px -1px rgba(0, 255, 255, 0.05);
+    }
   }
   
   .shadow-harmony-cyan\/20 {
@@ -184,7 +227,7 @@
     box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.5), 0 4px 6px -2px rgba(0, 255, 255, 0.2);
   }
 
-  /* Advanced Professional Animations */
+  /* Mobile-optimized animations */
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -278,6 +321,7 @@
     }
   }
 
+  /* Mobile-optimized animation classes */
   .animate-fade-in {
     animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
@@ -310,7 +354,7 @@
     animation: fade-in-scale 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  /* Advanced Staggered animations with smooth timing */
+  /* Mobile-optimized staggered animations */
   .stagger-animation > * {
     opacity: 0;
     animation: fade-in-scale 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -325,17 +369,29 @@
   .stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
   .stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
 
-  /* Ultra-smooth professional hover effects */
+  /* Mobile-responsive hover effects */
   .professional-card {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
   }
   
-  .professional-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-      0 25px 50px -12px rgba(0, 255, 255, 0.25),
-      0 0 0 1px rgba(0, 255, 255, 0.1);
+  @media (hover: hover) and (pointer: fine) {
+    .professional-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 255, 255, 0.25),
+        0 0 0 1px rgba(0, 255, 255, 0.1);
+    }
+  }
+
+  /* Mobile-optimized touch interactions */
+  @media (hover: none) and (pointer: coarse) {
+    .professional-card:active {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 
+        0 15px 30px -8px rgba(0, 255, 255, 0.2),
+        0 0 0 1px rgba(0, 255, 255, 0.08);
+    }
   }
 
   .professional-button {
@@ -360,20 +416,22 @@
     transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .professional-button:hover::before {
-    left: 100%;
-  }
-  
-  .professional-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(0, 255, 255, 0.4);
+  @media (hover: hover) and (pointer: fine) {
+    .professional-button:hover::before {
+      left: 100%;
+    }
+    
+    .professional-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 255, 255, 0.4);
+    }
   }
 
-  /* Smooth scroll reveal utility */
+  /* Mobile-optimized scroll reveal */
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-reveal.revealed {
@@ -381,25 +439,38 @@
     transform: translateY(0);
   }
 
-  /* Parallax scrolling effect */
+  /* Mobile-optimized parallax */
   .parallax-slow {
     will-change: transform;
     transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Smooth section transitions */
+  /* Mobile-responsive section spacing */
   .smooth-section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 60px;
     scroll-snap-align: start;
   }
 
-  /* Advanced floating elements with physics-based motion */
+  @media (min-width: 768px) {
+    .smooth-section {
+      scroll-margin-top: 80px;
+    }
+  }
+
+  /* Mobile-optimized floating elements */
   .floating-element {
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05));
     animation: float 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     filter: blur(1px);
+  }
+
+  @media (max-width: 640px) {
+    .floating-element {
+      animation-duration: 6s;
+      filter: blur(0.5px);
+    }
   }
 
   .floating-element:nth-child(odd) {
@@ -413,7 +484,7 @@
     animation-duration: 10s;
   }
 
-  /* Smooth text reveal animation */
+  /* Mobile-optimized text reveal */
   .text-reveal {
     background: linear-gradient(
       to right,
@@ -436,7 +507,7 @@
     }
   }
 
-  /* Smooth gradient border animation */
+  /* Mobile-optimized gradient border */
   .gradient-border {
     position: relative;
     background: linear-gradient(45deg, hsl(var(--harmony-cyan)), hsl(var(--harmony-teal)));
@@ -453,7 +524,7 @@
     z-index: -1;
   }
 
-  /* Smooth loading shimmer effect */
+  /* Mobile-optimized shimmer effect */
   .shimmer {
     background: linear-gradient(
       90deg,
@@ -474,7 +545,7 @@
     }
   }
 
-  /* Ultra-smooth page transitions */
+  /* Mobile-optimized page transitions */
   .page-transition {
     animation: page-enter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
@@ -487,6 +558,64 @@
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Mobile responsive utilities */
+  .mobile-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .mobile-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Prevent layout shifts on mobile */
+  .prevent-shift {
+    contain: layout style paint;
+  }
+
+  /* Mobile-optimized typography */
+  @media (max-width: 640px) {
+    .mobile-text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    
+    .mobile-text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    
+    .mobile-text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+    
+    .mobile-text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    
+    .mobile-text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    
+    .mobile-text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
     }
   }
 }
