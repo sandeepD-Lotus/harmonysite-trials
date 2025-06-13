@@ -32,7 +32,7 @@ const Index = () => {
             </div>
             <div className="animate-fade-in professional-card" style={{animationDelay: '0.3s'}}>
               <img
-                src="/lovable-uploads/07122101-b5a7-48ff-9398-0848fafdde02.png"
+                src="/lovable-uploads/Hands_on_a_laptop_keyboard_(Unsplash).jpg"
                 alt="Who we are"
                 className="w-full h-auto rounded-lg shadow-xl hover:shadow-harmony-cyan/30 transition-all duration-500"
               />
