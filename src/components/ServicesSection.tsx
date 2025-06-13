@@ -7,17 +7,17 @@ const ServicesSection = () => {
     {
       title: "Managed IT Services",
       description: "Comprehensive IT infrastructure management and support to keep your business running smoothly 24/7.",
-      image: "/lovable-uploads/5ba34598-6bde-4f61-953b-446db39dc09b.png"
+      image: "/lovable-uploads/startups1_0(1).avif"
     },
     {
       title: "IT Security",
       description: "Advanced cybersecurity solutions to protect your business from evolving digital threats and ensure data integrity.",
-      image: "/lovable-uploads/5ba34598-6bde-4f61-953b-446db39dc09b.png"
+      image: "/lovable-uploads/images.jpg"
     },
     {
       title: "IT Consulting",
       description: "Strategic technology consulting to align your IT infrastructure with business goals and drive digital transformation.",
-      image: "/lovable-uploads/Gemini_Generated_Image_1q8bu11q8bu11q8b.png"
+      image: "/lovable-uploads/hands.jpg"
     }
   ];
 
