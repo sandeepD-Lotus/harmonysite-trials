@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -6,10 +5,8 @@ import ServicesSection from '@/components/ServicesSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <HeroSection />
       
@@ -30,12 +27,10 @@ const Index = () => {
                 exceptional results for our clients.
               </p>
             </div>
-            <div className="animate-fade-in professional-card" style={{animationDelay: '0.3s'}}>
-              <img
-                src="/lovable-uploads/Hands_on_a_laptop_keyboard_(Unsplash).jpg"
-                alt="Who we are"
-                className="w-full h-auto rounded-lg shadow-xl hover:shadow-harmony-cyan/30 transition-all duration-500"
-              />
+            <div className="animate-fade-in professional-card" style={{
+            animationDelay: '0.3s'
+          }}>
+              
             </div>
           </div>
         </div>
@@ -123,10 +118,8 @@ const Index = () => {
         
         {/* Animated background grid */}
         <div className="absolute inset-0 opacity-5">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
+          <div className="w-full h-full" style={{
+          backgroundImage: `repeating-linear-gradient(
                 90deg,
                 transparent,
                 transparent 50px,
@@ -140,8 +133,7 @@ const Index = () => {
                 rgba(0, 255, 255, 0.1) 50px,
                 rgba(0, 255, 255, 0.1) 51px
               )`
-            }}
-          ></div>
+        }}></div>
         </div>
       </section>
 
@@ -149,8 +141,6 @@ const Index = () => {
       <WhyChooseSection />
       <CTASection />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
