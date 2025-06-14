@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const location = useLocation();
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   
   const navItems = [
     { name: 'Home', path: '/' },
@@ -25,6 +26,14 @@ const Navigation = () => {
     { name: 'Strategic Growth Solutions', path: '/solutions#strategic-growth' },
     { name: 'Technology Consulting', path: '/solutions#technology-consulting' },
   ];
+
+  const handleMobileMenuToggle = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
+  const closeMobileMenu = () => {
+    setShowMobileMenu(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-fade-in">
@@ -46,7 +55,7 @@ const Navigation = () => {
             </div>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <div key={item.name} className="relative" style={{animationDelay: `${index * 0.1}s`}}>
@@ -100,7 +109,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Desktop CTA Button */}
           <div className="hidden md:block animate-fade-in">
             <Button
               asChild
@@ -109,7 +118,64 @@ const Navigation = () => {
               <Link to="/connect">Get Started</Link>
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleMobileMenuToggle}
+              className="text-white hover:text-harmony-cyan hover:bg-harmony-navy/50"
+            >
+              {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </Button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {showMobileMenu && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-scale-in">
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <div key={item.name}>
+                  <Link
+                    to={item.path}
+                    onClick={closeMobileMenu}
+                    className={`block py-3 text-base font-medium transition-all duration-300 hover:text-harmony-cyan hover:translate-x-2 ${
+                      location.pathname === item.path
+                        ? 'text-harmony-cyan'
+                        : 'text-white'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.hasDropdown && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {solutionItems.map((solutionItem, index) => (
+                        <Link
+                          key={index}
+                          to={solutionItem.path}
+                          onClick={closeMobileMenu}
+                          className="block py-2 text-sm text-gray-300 hover:text-harmony-cyan transition-all duration-200 hover:translate-x-2"
+                        >
+                          {solutionItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4 border-t border-harmony-cyan/20">
+                <Button
+                  asChild
+                  className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white border border-harmony-cyan transition-all duration-300"
+                >
+                  <Link to="/connect" onClick={closeMobileMenu}>Get Started</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
