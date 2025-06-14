@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -8,6 +7,7 @@ const Navigation = () => {
   const location = useLocation();
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   
   const navItems = [
     { name: 'Home', path: '/' },
@@ -33,6 +33,7 @@ const Navigation = () => {
 
   const closeMobileMenu = () => {
     setShowMobileMenu(false);
+    setMobileSolutionsOpen(false);
   };
 
   return (
@@ -134,78 +135,95 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-scale-in">
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item) => (
-                <div key={item.name}>
+          <div className="md:hidden fixed inset-0 z-50 bg-harmony-navy/98 backdrop-blur-sm border-b border-harmony-cyan/20 animate-scale-in overflow-y-auto">
+            <div className="flex items-center justify-between px-4 py-2 border-b border-harmony-cyan/20">
+              <Link to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
+                <img
+                  src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
+                  alt="Harmony Consulting Solutions Logo"
+                  className="w-10 h-10"
+                  style={{ objectFit: 'contain', borderRadius: '0.5rem' }}
+                />
+                <span className="text-xl font-bold tracking-tight text-harmony-cyan ml-1">HARMONY</span>
+              </Link>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={closeMobileMenu}
+                className="text-white hover:text-harmony-cyan hover:bg-harmony-navy/60"
+                aria-label="Close Menu"
+              >
+                <X className="w-7 h-7" />
+              </Button>
+            </div>
+            <nav className="flex flex-col">
+              {navItems.map((item, idx) =>
+                item.hasDropdown ? (
+                  <div key={item.name}>
+                    <button
+                      onClick={() => setMobileSolutionsOpen((open) => !open)}
+                      className={`
+                        w-full flex items-center justify-between px-4 py-3 text-[16px] font-semibold text-left border-b border-harmony-cyan/15
+                        ${location.pathname === item.path ? "text-harmony-cyan border-l-4 border-harmony-cyan bg-harmony-navy/70" : "text-white"}
+                        focus:outline-none transition-all
+                      `}
+                      aria-expanded={mobileSolutionsOpen}
+                    >
+                      <span>Our Solutions</span>
+                      <ChevronDown
+                        className={`ml-2 w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {mobileSolutionsOpen && (
+                      <div className="bg-harmony-navy/90">
+                        {solutionItems.map((solutionItem) => (
+                          <Link
+                            key={solutionItem.name}
+                            to={solutionItem.path}
+                            onClick={closeMobileMenu}
+                            className="block pl-8 pr-4 py-2 text-[15px] border-b border-harmony-cyan/10 text-gray-300 hover:text-harmony-cyan hover:bg-harmony-navy/70"
+                            style={{ lineHeight: '1.2', letterSpacing: '-0.01em' }}
+                          >
+                            {solutionItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
                   <Link
+                    key={item.name}
                     to={item.path}
                     onClick={closeMobileMenu}
                     className={`
-                      block 
-                      py-2
-                      text-base
-                      font-medium
+                      w-full block px-4 py-3 text-[16px] font-semibold border-b border-harmony-cyan/15
+                      text-left
                       transition-all
-                      duration-300
-                      hover:text-harmony-cyan
-                      hover:translate-x-2
-                      ${location.pathname === item.path ? 'text-harmony-cyan' : 'text-white'}
-                      text-[15px] leading-5
-                      sm:text-[17px]
-                      sm:leading-6
-                      md:text-base md:leading-6
+                      duration-150
+                      ${
+                        location.pathname === item.path
+                          ? "text-harmony-cyan border-l-4 border-harmony-cyan bg-harmony-navy/70"
+                          : "text-white"
+                      }
                     `}
                     style={{
-                      // Extra tight line height for nav links on small screens
-                      lineHeight: '1.3',
+                      lineHeight: '1.2',
                       letterSpacing: '-0.01em',
                     }}
                   >
                     {item.name}
                   </Link>
-                  {item.hasDropdown && (
-                    <div className="ml-2 mt-1 space-y-1">
-                      {solutionItems.map((solutionItem, index) => (
-                        <Link
-                          key={index}
-                          to={solutionItem.path}
-                          onClick={closeMobileMenu}
-                          className={`
-                            block
-                            py-1
-                            text-sm
-                            text-gray-300
-                            hover:text-harmony-cyan
-                            transition-all
-                            duration-200
-                            hover:translate-x-2
-                            text-[13px]
-                            leading-5
-                            sm:text-[15px]
-                            sm:leading-6
-                          `}
-                          style={{
-                            // Compact dropdown line height on mobile
-                            lineHeight: '1.25',
-                          }}
-                        >
-                          {solutionItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <div className="pt-2 border-t border-harmony-cyan/20">
+                )
+              )}
+              <div className="px-4 py-4">
                 <Button
                   asChild
-                  className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white border border-harmony-cyan transition-all duration-300 py-2 text-[15px] sm:text-base"
+                  className="w-full bg-harmony-cyan text-white font-bold text-[16px] py-3 rounded-md mt-2 shadow-harmony-cyan/20 hover:bg-harmony-cyan/80 transition duration-200"
                 >
                   <Link to="/connect" onClick={closeMobileMenu}>Get Started</Link>
                 </Button>
               </div>
-            </div>
+            </nav>
           </div>
         )}
       </div>
