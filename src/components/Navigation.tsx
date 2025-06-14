@@ -172,10 +172,10 @@ const Navigation = () => {
               }}
             >
               {/* Nav header */}
-              <div className="flex items-center px-4 pb-1 gap-3 min-w-0 w-full">
-                {/* Logo/Image, flex-shrink:0 to never collapse */}
-                <Link to="/" className="flex items-center gap-3 group min-w-0 flex-shrink-0">
-                  <div className="relative overflow-hidden rounded-lg h-10 w-10 flex-shrink-0 bg-white">
+              <div className="flex items-start px-4 pb-1 w-full gap-2">
+                {/* Logo & titles - stacked on mobile */}
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <div className="relative overflow-hidden rounded-lg h-10 w-10 bg-white flex-shrink-0">
                     <img 
                       src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
                       alt="Harmony Consulting Solutions Logo"
@@ -183,14 +183,14 @@ const Navigation = () => {
                     />
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <span className="text-white font-bold text-base leading-tight whitespace-nowrap block truncate max-w-[100px] md:max-w-none"
+                    <span className="text-white font-bold text-base leading-tight whitespace-nowrap block truncate max-w-[80px]"
                       style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
                     >HARMONY</span>
-                    <span className="text-harmony-cyan text-xs font-medium leading-tight whitespace-nowrap block truncate max-w-[120px] md:max-w-none"
+                    <span className="text-harmony-cyan text-xs font-medium leading-tight whitespace-nowrap block truncate max-w-[90px]"
                       style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}
                     >CONSULTING SOLUTIONS</span>
                   </div>
-                </Link>
+                </div>
                 {/* Spacer */}
                 <div className="flex-1" />
                 {/* Close (X) button, always at far right */}
@@ -198,7 +198,7 @@ const Navigation = () => {
                   variant="ghost"
                   size="icon"
                   onClick={closeMobileMenu}
-                  className="text-white hover:text-harmony-cyan ml-2 flex-shrink-0"
+                  className="text-white hover:text-harmony-cyan ml-2 mt-1 flex-shrink-0"
                   aria-label="Close menu"
                 >
                   <X className="w-7 h-7" />
