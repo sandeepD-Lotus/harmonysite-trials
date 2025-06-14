@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -53,7 +52,6 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-fade-in">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-
           {/* Logo and Hamburger/Menu */}
           <Link to="/" className="flex items-center space-x-2 group md:space-x-3 z-[55]">
             <div className="relative overflow-hidden rounded-lg h-10 w-10 md:w-16 md:h-16">
@@ -174,9 +172,9 @@ const Navigation = () => {
               }}
             >
               {/* Nav header */}
-              <div className="flex items-center justify-between px-4 pb-1">
-                {/* Logo and Text in a row, spaced correct and not overlapping */}
-                <Link to="/" className="flex items-center gap-3 group min-w-0">
+              <div className="flex items-center px-4 pb-1 gap-3 min-w-0 w-full">
+                {/* Logo/Image, flex-shrink:0 to never collapse */}
+                <Link to="/" className="flex items-center gap-3 group min-w-0 flex-shrink-0">
                   <div className="relative overflow-hidden rounded-lg h-10 w-10 flex-shrink-0 bg-white">
                     <img 
                       src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
@@ -185,25 +183,27 @@ const Navigation = () => {
                     />
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <span className="text-white font-bold text-base leading-tight whitespace-nowrap block"
+                    <span className="text-white font-bold text-base leading-tight whitespace-nowrap block truncate max-w-[100px] md:max-w-none"
                       style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
                     >HARMONY</span>
-                    <span className="text-harmony-cyan text-xs font-medium leading-tight whitespace-nowrap block"
+                    <span className="text-harmony-cyan text-xs font-medium leading-tight whitespace-nowrap block truncate max-w-[120px] md:max-w-none"
                       style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}
                     >CONSULTING SOLUTIONS</span>
                   </div>
                 </Link>
+                {/* Spacer */}
+                <div className="flex-1" />
+                {/* Close (X) button, always at far right */}
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={closeMobileMenu}
-                  className="text-white hover:text-harmony-cyan ml-2"
+                  className="text-white hover:text-harmony-cyan ml-2 flex-shrink-0"
                   aria-label="Close menu"
                 >
                   <X className="w-7 h-7" />
                 </Button>
               </div>
-
               {/* Navigation Links */}
               <nav className="flex flex-col gap-0 pt-2 pb-6" style={{}}>
                 {navItems.map((item, idx) =>
