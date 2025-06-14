@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+
 const HeroSection = () => {
-  return <section className="min-h-screen harmony-gradient relative overflow-hidden">
+  return (
+    <section className="min-h-screen harmony-gradient relative overflow-hidden">
       {/* Animated grid overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-r from-transparent via-harmony-cyan to-transparent animate-pulse"></div>
@@ -31,18 +34,22 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="relative animate-fade-in" style={{
-          animationDelay: '0.3s'
-        }}>
-            <div className="relative group">
-              <img src="/lovable-uploads/Hands_on_a_laptop_keyboard_(Unsplash).jpg" alt="Business transformation" className="w-full h-auto rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-harmony-cyan/30" />
+          {/* Right Content - Vertical Rectangular Image */}
+          <div className="relative animate-fade-in flex justify-center" style={{ animationDelay: '0.3s' }}>
+            <div className="relative group w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5] overflow-hidden">
+              <img 
+                src="/lovable-uploads/c72de3ab-cbb2-443c-a470-6066a3928022.png" 
+                alt="Business transformation vertical" 
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:shadow-harmony-cyan/30"
+                style={{ borderRadius: '16px' }}
+              />
               {/* Floating overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-harmony-cyan/20 to-harmony-teal/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-harmony-cyan/20 to-harmony-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[16px]"></div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default HeroSection;
