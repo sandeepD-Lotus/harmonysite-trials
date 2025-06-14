@@ -175,28 +175,29 @@ const Navigation = () => {
             >
               {/* Nav header */}
               <div className="flex items-center justify-between px-4 pb-1">
-                <Link to="/" className="flex items-center space-x-2 group">
-                  <div className="relative overflow-hidden rounded-lg h-10 w-10">
+                {/* Logo and Text in a row, spaced correct and not overlapping */}
+                <Link to="/" className="flex items-center gap-3 group min-w-0">
+                  <div className="relative overflow-hidden rounded-lg h-10 w-10 flex-shrink-0 bg-white">
                     <img 
                       src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
                       alt="Harmony Consulting Solutions Logo"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-col ml-2">
-                    <span className="text-white font-bold text-base leading-tight"
-                      style={{ whiteSpace: 'nowrap' }}
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-white font-bold text-base leading-tight whitespace-nowrap block"
+                      style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
                     >HARMONY</span>
-                    <div className="text-harmony-cyan text-xs font-medium leading-tight"
-                      style={{ whiteSpace: 'nowrap' }}
-                    >CONSULTING SOLUTIONS</div>
+                    <span className="text-harmony-cyan text-xs font-medium leading-tight whitespace-nowrap block"
+                      style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}
+                    >CONSULTING SOLUTIONS</span>
                   </div>
                 </Link>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={closeMobileMenu}
-                  className="text-white hover:text-harmony-cyan"
+                  className="text-white hover:text-harmony-cyan ml-2"
                   aria-label="Close menu"
                 >
                   <X className="w-7 h-7" />
