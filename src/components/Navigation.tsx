@@ -135,28 +135,60 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {showMobileMenu && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-scale-in">
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
                 <div key={item.name}>
                   <Link
                     to={item.path}
                     onClick={closeMobileMenu}
-                    className={`block py-3 text-base font-medium transition-all duration-300 hover:text-harmony-cyan hover:translate-x-2 ${
-                      location.pathname === item.path
-                        ? 'text-harmony-cyan'
-                        : 'text-white'
-                    }`}
+                    className={`
+                      block 
+                      py-2
+                      text-base
+                      font-medium
+                      transition-all
+                      duration-300
+                      hover:text-harmony-cyan
+                      hover:translate-x-2
+                      ${location.pathname === item.path ? 'text-harmony-cyan' : 'text-white'}
+                      text-[15px] leading-5
+                      sm:text-[17px]
+                      sm:leading-6
+                      md:text-base md:leading-6
+                    `}
+                    style={{
+                      // Extra tight line height for nav links on small screens
+                      lineHeight: '1.3',
+                      letterSpacing: '-0.01em',
+                    }}
                   >
                     {item.name}
                   </Link>
                   {item.hasDropdown && (
-                    <div className="ml-4 mt-2 space-y-2">
+                    <div className="ml-2 mt-1 space-y-1">
                       {solutionItems.map((solutionItem, index) => (
                         <Link
                           key={index}
                           to={solutionItem.path}
                           onClick={closeMobileMenu}
-                          className="block py-2 text-sm text-gray-300 hover:text-harmony-cyan transition-all duration-200 hover:translate-x-2"
+                          className={`
+                            block
+                            py-1
+                            text-sm
+                            text-gray-300
+                            hover:text-harmony-cyan
+                            transition-all
+                            duration-200
+                            hover:translate-x-2
+                            text-[13px]
+                            leading-5
+                            sm:text-[15px]
+                            sm:leading-6
+                          `}
+                          style={{
+                            // Compact dropdown line height on mobile
+                            lineHeight: '1.25',
+                          }}
                         >
                           {solutionItem.name}
                         </Link>
@@ -165,10 +197,10 @@ const Navigation = () => {
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-harmony-cyan/20">
+              <div className="pt-2 border-t border-harmony-cyan/20">
                 <Button
                   asChild
-                  className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white border border-harmony-cyan transition-all duration-300"
+                  className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white border border-harmony-cyan transition-all duration-300 py-2 text-[15px] sm:text-base"
                 >
                   <Link to="/connect" onClick={closeMobileMenu}>Get Started</Link>
                 </Button>
