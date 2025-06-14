@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Mail, Phone, MapPin, Linkedin, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -30,15 +29,18 @@ const Footer = () => {
               and strategic growth solutions.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50">
+              <a href="#" className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50" aria-label="Facebook">
                 <Facebook className="w-5 h-5 text-white" />
-              </div>
-              <div className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50">
+              </a>
+              <a href="#" className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50" aria-label="Twitter">
                 <Twitter className="w-5 h-5 text-white" />
-              </div>
-              <div className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50">
-                <Instagram className="w-5 h-5 text-white" />
-              </div>
+              </a>
+              <a href="#" className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-harmony-cyan rounded-full flex items-center justify-center hover:bg-harmony-cyan/80 transition-all duration-300 cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-harmony-cyan/50" aria-label="YouTube">
+                <Youtube className="w-5 h-5 text-white" />
+              </a>
             </div>
           </div>
 
