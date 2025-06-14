@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -67,19 +68,19 @@ const About = () => {
                 {
                   name: 'Martha Blevins',
                   role: 'Chief Executive Officer',
-                  image: '/lovable-uploads/martha Blevins.png',
-                  bio: 'Visionary leader with 15+ years in strategic consulting and business transformation. Sarah has led over 200 successful digital transformation projects across Fortune 500 companies.'
+                  image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
+                  bio: 'Visionary leader with 15+ years in strategic consulting and business transformation. Martha has led over 200 successful digital transformation projects across Fortune 500 companies.'
                 },
                 {
                   name: 'Michael Chen',
                   role: 'Chief Technology Officer',
-                  image: '/lovable-uploads/Devin pratt.png',
+                  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
                   bio: 'Technology expert specializing in AI, cloud computing, and digital innovation. Michael holds multiple patents in machine learning and has published extensively in tech journals.'
                 },
                 {
                   name: 'Emily Rodriguez',
                   role: 'Chief Operations Officer',
-                  image: '/lovable-uploads/murad Naser.png',
+                  image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
                   bio: 'Operations specialist focused on process optimization and client success. Emily has streamlined operations for over 100 organizations, improving efficiency by an average of 40%.'
                 }
               ].map((member, index) => (
@@ -89,6 +90,10 @@ const About = () => {
                       src={member.image} 
                       alt={member.name}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=128&background=00FFFF&color=1a365d&bold=true`;
+                      }}
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
