@@ -113,16 +113,18 @@ const Navigation = () => {
           {/* Dark overlay, closes menu on click */}
           <div className="fixed inset-0 bg-black/60 z-40" onClick={closeMobileMenu} aria-hidden="true"></div>
           {/* Mobile Menu */}
-          <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-harmony-navy w-full pt-4 min-h-screen flex flex-col animate-scale-in shadow-xl border-r border-harmony-cyan/40" style={{
-            maxWidth: '100%',
-            borderTopLeftRadius: 0,
-            borderTopRightRadius: 0
-          }}>
+          <div
+            className="md:hidden fixed top-0 left-0 right-0 z-[60] bg-harmony-navy w-full pt-4 min-h-screen flex flex-col animate-scale-in shadow-xl border-r border-harmony-cyan/40"
+            style={{
+              maxWidth: '100%',
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0
+            }}>
             {/* Nav header */}
-            <div className="flex justify-between items-start px-4 pb-1 w-full">
+            <div className="flex justify-between items-start px-4 pb-1 w-full bg-harmony-navy z-10">
               {/* Logo & titles - stacked on mobile */}
               <Link to="/" className="flex items-center space-x-2 group">
-                <div className="relative overflow-hidden rounded-lg h-8 w-8">
+                <div className="relative overflow-hidden rounded-lg h-8 w-8 bg-white">
                   <img
                     src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
                     alt="Harmony Consulting Solutions Logo"
@@ -130,7 +132,7 @@ const Navigation = () => {
                   />
                   <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex-col">
+                <div className="flex-col ml-2">
                   <span className="text-white font-bold text-sm leading-tight" style={{ whiteSpace: 'nowrap' }}>
                     HARMONY
                   </span>
