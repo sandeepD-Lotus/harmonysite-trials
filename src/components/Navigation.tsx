@@ -38,21 +38,26 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative overflow-hidden rounded-lg">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+
+          {/* Logo and Hamburger/Menu */}
+          <Link to="/" className="flex items-center space-x-2 group md:space-x-3">
+            <div className="relative overflow-hidden rounded-lg h-10 w-10 md:w-16 md:h-16">
               <img 
                 src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png" 
                 alt="Harmony Consulting Solutions Logo" 
-                className="w-16 h-16 transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-cover"
               />
               <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="transition-all duration-300 group-hover:translate-x-1">
-              <span className="text-white font-bold text-xl">HARMONY</span>
-              <div className="text-harmony-cyan text-sm font-medium">CONSULTING SOLUTIONS</div>
+            <div className="flex-col">
+              <span className="text-white font-bold text-base md:text-xl leading-tight"
+                style={{ whiteSpace: 'nowrap' }}
+              >HARMONY</span>
+              <div className="text-harmony-cyan text-xs md:text-sm font-medium leading-tight"
+                style={{ whiteSpace: 'nowrap' }}
+              >CONSULTING SOLUTIONS</div>
             </div>
           </Link>
 
@@ -121,53 +126,37 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <Button
               variant="ghost"
               size="icon"
               onClick={handleMobileMenuToggle}
               className="text-white hover:text-harmony-cyan hover:bg-harmony-navy/50"
+              aria-label={showMobileMenu ? "Close menu" : "Open menu"}
             >
               {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
         </div>
+        {/* Border divider for mobile below nav */}
+        <div className="md:hidden border-t border-harmony-cyan/15"></div>
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="md:hidden fixed inset-0 z-50 bg-harmony-navy/98 backdrop-blur-sm border-b border-harmony-cyan/20 animate-scale-in overflow-y-auto">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-harmony-cyan/20">
-              <Link to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
-                <img
-                  src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png"
-                  alt="Harmony Consulting Solutions Logo"
-                  className="w-10 h-10"
-                  style={{ objectFit: 'contain', borderRadius: '0.5rem' }}
-                />
-                <span className="text-xl font-bold tracking-tight text-harmony-cyan ml-1">HARMONY</span>
-              </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={closeMobileMenu}
-                className="text-white hover:text-harmony-cyan hover:bg-harmony-navy/60"
-                aria-label="Close Menu"
-              >
-                <X className="w-7 h-7" />
-              </Button>
-            </div>
-            <nav className="flex flex-col">
+          <div className="md:hidden fixed inset-x-0 top-16 z-50 bg-harmony-navy/98 border-b border-harmony-cyan/20 animate-scale-in overflow-y-auto transition-all duration-200 shadow-2xl">
+            <nav className="flex flex-col py-2">
               {navItems.map((item, idx) =>
                 item.hasDropdown ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setMobileSolutionsOpen((open) => !open)}
                       className={`
-                        w-full flex items-center justify-between px-4 py-3 text-[16px] font-semibold text-left border-b border-harmony-cyan/15
+                        w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-left border-b border-harmony-cyan/10
                         ${location.pathname === item.path ? "text-harmony-cyan border-l-4 border-harmony-cyan bg-harmony-navy/70" : "text-white"}
                         focus:outline-none transition-all
                       `}
                       aria-expanded={mobileSolutionsOpen}
+                      style={{ minHeight: '40px', lineHeight: '1.2'}}
                     >
                       <span>Our Solutions</span>
                       <ChevronDown
@@ -181,7 +170,7 @@ const Navigation = () => {
                             key={solutionItem.name}
                             to={solutionItem.path}
                             onClick={closeMobileMenu}
-                            className="block pl-8 pr-4 py-2 text-[15px] border-b border-harmony-cyan/10 text-gray-300 hover:text-harmony-cyan hover:bg-harmony-navy/70"
+                            className="block pl-8 pr-4 py-2 text-xs border-b border-harmony-cyan/10 text-gray-300 hover:text-harmony-cyan hover:bg-harmony-navy/70"
                             style={{ lineHeight: '1.2', letterSpacing: '-0.01em' }}
                           >
                             {solutionItem.name}
@@ -196,10 +185,8 @@ const Navigation = () => {
                     to={item.path}
                     onClick={closeMobileMenu}
                     className={`
-                      w-full block px-4 py-3 text-[16px] font-semibold border-b border-harmony-cyan/15
-                      text-left
-                      transition-all
-                      duration-150
+                      w-full block px-4 py-2 text-sm font-semibold border-b border-harmony-cyan/10
+                      text-left transition-all duration-150
                       ${
                         location.pathname === item.path
                           ? "text-harmony-cyan border-l-4 border-harmony-cyan bg-harmony-navy/70"
@@ -207,18 +194,19 @@ const Navigation = () => {
                       }
                     `}
                     style={{
-                      lineHeight: '1.2',
+                      lineHeight: '1.25',
                       letterSpacing: '-0.01em',
+                      minHeight: '40px'
                     }}
                   >
                     {item.name}
                   </Link>
                 )
               )}
-              <div className="px-4 py-4">
+              <div className="px-4 py-2">
                 <Button
                   asChild
-                  className="w-full bg-harmony-cyan text-white font-bold text-[16px] py-3 rounded-md mt-2 shadow-harmony-cyan/20 hover:bg-harmony-cyan/80 transition duration-200"
+                  className="w-full bg-harmony-cyan text-white font-bold text-[15px] py-2 rounded-md mt-2 shadow-harmony-cyan/20 hover:bg-harmony-cyan/80 transition duration-200"
                 >
                   <Link to="/connect" onClick={closeMobileMenu}>Get Started</Link>
                 </Button>
