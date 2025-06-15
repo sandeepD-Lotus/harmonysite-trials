@@ -54,12 +54,15 @@ const Connect = () => {
             </div>
 
             {/* Right Content - Image */}
-            <div>
-              <img
-                src="/lovable-uploads/22e160ad-81d3-42d9-a4fc-daa711a988bb.png"
-                alt="Let's work together"
-                className="w-full h-auto rounded-lg shadow-2xl"
-              />
+            <div className="flex justify-center lg:justify-end items-center h-full">
+              <div className="w-56 sm:w-64 md:w-80 lg:w-96 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl bg-harmony-navy/20 flex items-center justify-center">
+                <img
+                  src="/lovable-uploads/d1c1520d-3bf6-4bdc-98bd-1168adbc5717.png"
+                  alt="Let's work together vertical"
+                  className="object-cover w-full h-full"
+                  style={{ objectPosition: 'center top' }}
+                />
+              </div>
             </div>
           </div>
 
