@@ -14,7 +14,7 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                   alt="Harmony Consulting Solutions Logo" 
-                  className="w-32 h-16 transition-transform duration-300 group-hover:scale-110 object-contain"
+                  className="w-48 h-24 transition-transform duration-300 group-hover:scale-110 object-contain"
                 />
                 <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
