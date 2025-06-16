@@ -129,7 +129,7 @@ const Navigation = () => {
               <div className="flex justify-between items-start px-4 pb-1 w-full bg-harmony-navy z-10">
                 {/* Logo only */}
                 <Link to="/" className="flex items-center group">
-                  <div className="relative rounded-lg h-20 w-40 bg-white">
+                  <div className="relative rounded-lg h-20 w-40">
                     <img 
                       src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                       alt="Harmony Consulting Solutions Logo" 
