@@ -57,7 +57,7 @@ const Connect = () => {
             <div className="flex justify-center lg:justify-end items-center h-full">
               <div className="w-56 sm:w-64 md:w-80 lg:w-96 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl bg-harmony-navy/20 flex items-center justify-center">
                 <img
-                  src="/lovable-uploads/connect_us_2.jpg"
+                  src="/lovable-uploads/contact_us.png"
                   alt="Let's work together vertical"
                   className="object-cover w-full h-full"
                   style={{ objectPosition: 'center top' }}
