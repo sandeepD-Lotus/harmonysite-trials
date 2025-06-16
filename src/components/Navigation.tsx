@@ -71,7 +71,7 @@ const Navigation = () => {
           {/* Logo block */}
           <div className="flex items-center group z-[55]">
             <Link to="/" className="flex items-center group">
-              <div className="relative overflow-hidden rounded-lg h-10 w-20 md:w-32 md:h-16 flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg h-14 w-28 md:w-40 md:h-20 flex-shrink-0">
                 <img 
                   alt="Harmony Consulting Solutions Logo" 
                   className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-contain" 
@@ -129,7 +129,7 @@ const Navigation = () => {
               <div className="flex justify-between items-start px-4 pb-1 w-full bg-harmony-navy z-10">
                 {/* Logo only */}
                 <Link to="/" className="flex items-center group">
-                  <div className="relative overflow-hidden rounded-lg h-8 w-16 bg-white">
+                  <div className="relative overflow-hidden rounded-lg h-12 w-24 bg-white">
                     <img 
                       src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                       alt="Harmony Consulting Solutions Logo" 
