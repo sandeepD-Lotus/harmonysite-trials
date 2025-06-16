@@ -68,7 +68,7 @@ const About = () => {
                 {
                   name: 'Martha Blevins',
                   role: 'Chief Executive Officer',
-                  image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
+                  image: 'public/lovable-uploads/martha Blevins.png',
                   bio: 'Visionary leader with 15+ years in strategic consulting and business transformation. Martha has led over 200 successful digital transformation projects across Fortune 500 companies.'
                 },
                 {
