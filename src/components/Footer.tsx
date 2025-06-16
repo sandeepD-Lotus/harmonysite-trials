@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Mail, Phone, MapPin, Linkedin, Youtube } from 'lucide-react';
@@ -10,18 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           {/* Company Info - Always visible, stacked on mobile */}
           <div className="col-span-1 md:col-span-2 mb-4 md:mb-0 animate-slide-in-right flex flex-col">
-            <Link to="/" className="flex items-center space-x-3 mb-4 group">
+            <Link to="/" className="flex items-center mb-4 group">
               <div className="relative overflow-hidden rounded-lg">
                 <img 
-                  src="/lovable-uploads/5293c8eb-5f72-4bb9-b36a-732d2afdec1d.png" 
+                  src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                   alt="Harmony Consulting Solutions Logo" 
-                  className="w-16 h-16 transition-transform duration-300 group-hover:scale-110"
+                  className="w-32 h-16 transition-transform duration-300 group-hover:scale-110 object-contain"
                 />
                 <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="transition-all duration-300 group-hover:translate-x-1">
-                <span className="text-white font-bold text-xl">HARMONY</span>
-                <div className="text-harmony-cyan text-sm font-medium">CONSULTING SOLUTIONS</div>
               </div>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md leading-relaxed">
@@ -96,4 +91,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
