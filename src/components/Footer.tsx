@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Mail, Phone, MapPin, Linkedin, Youtube } from 'lucide-react';
@@ -10,13 +11,12 @@ const Footer = () => {
           {/* Company Info - Always visible, stacked on mobile */}
           <div className="col-span-1 md:col-span-2 mb-4 md:mb-0 animate-slide-in-right flex flex-col">
             <Link to="/" className="flex items-center mb-4 group">
-              <div className="relative rounded-lg">
+              <div className="relative rounded-lg bg-transparent">
                 <img 
                   src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                   alt="Harmony Consulting Solutions Logo" 
-                  className="w-56 h-28 transition-transform duration-300 group-hover:scale-110 object-contain"
+                  className="w-72 h-36 transition-transform duration-300 group-hover:scale-110 object-contain bg-transparent"
                 />
-                <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               </div>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md leading-relaxed">

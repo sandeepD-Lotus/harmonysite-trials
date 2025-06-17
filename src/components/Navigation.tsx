@@ -20,6 +20,7 @@ const Navigation = () => {
       document.body.style.overflow = '';
     };
   }, [showMobileMenu]);
+  
   const navItems = [{
     name: 'Home',
     path: '/'
@@ -64,20 +65,20 @@ const Navigation = () => {
     setShowMobileMenu(false);
     setMobileSolutionsOpen(false);
   };
-  return <nav className="fixed top-0 left-0 right-0 z-50 bg-harmony-navy/95 backdrop-blur-sm border-b border-harmony-cyan/20 animate-fade-in">
+  
+  return <nav className="fixed top-0 left-0 right-0 z-50 bg-harmony-navy border-b border-harmony-cyan/20 animate-fade-in">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         {/* header row adjustment: align with flex, no wrapping on md+ */}
-        <div className="flex items-center justify-between h-24 md:h-28 md:gap-8">
+        <div className="flex items-center justify-between h-32 md:h-32 md:gap-8">
           {/* Logo block */}
           <div className="flex items-center group z-[55]">
             <Link to="/" className="flex items-center group">
-              <div className="relative rounded-lg h-20 w-40 md:w-56 md:h-28 flex-shrink-0">
+              <div className="relative rounded-lg h-28 w-60 md:w-72 md:h-32 flex-shrink-0 bg-transparent">
                 <img 
                   alt="Harmony Consulting Solutions Logo" 
-                  className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-contain" 
+                  className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-contain bg-transparent" 
                   src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                 />
-                <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               </div>
             </Link>
           </div>
@@ -129,13 +130,12 @@ const Navigation = () => {
               <div className="flex justify-between items-start px-4 pb-1 w-full bg-harmony-navy z-10">
                 {/* Logo only */}
                 <Link to="/" className="flex items-center group">
-                  <div className="relative rounded-lg h-20 w-40">
+                  <div className="relative rounded-lg h-28 w-60 bg-transparent">
                     <img 
                       src="/lovable-uploads/a3b2de6e-178c-4669-95bf-11f31b1b70aa.png" 
                       alt="Harmony Consulting Solutions Logo" 
-                      className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-contain" 
+                      className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-contain bg-transparent" 
                     />
-                    <div className="absolute inset-0 bg-harmony-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                   </div>
                 </Link>
                 {/* Close (X) button, always at far right and vertically center */}

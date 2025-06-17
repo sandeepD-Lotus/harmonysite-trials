@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="w-full h-full bg-gradient-to-r from-transparent via-harmony-cyan to-transparent animate-pulse"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
           {/* Left Content */}
           <div className="text-left animate-slide-in-right">
@@ -36,15 +36,13 @@ const HeroSection = () => {
 
           {/* Right Content - Vertical Rectangular Image */}
           <div className="relative animate-fade-in flex justify-center" style={{ animationDelay: '0.3s' }}>
-            <div className="relative group w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5] overflow-hidden">
+            <div className="relative w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5] overflow-hidden">
               <img 
                 src="lovable-uploads/executives-working-together-laptop.jpg" 
                 alt="Business transformation vertical" 
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:shadow-harmony-cyan/30"
+                className="w-full h-full object-cover"
                 style={{ borderRadius: '16px' }}
               />
-              {/* Floating overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-harmony-cyan/20 to-harmony-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[16px]"></div>
             </div>
           </div>
         </div>
@@ -52,4 +50,5 @@ const HeroSection = () => {
     </section>
   );
 };
+
 export default HeroSection;
