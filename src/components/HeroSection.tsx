@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="relative animate-fade-in flex justify-center" style={{ animationDelay: '0.3s' }}>
             <div className="relative group w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5] overflow-hidden">
               <img 
-                src="lovable-uploads/senior-young-employees-working-office-top-vertical-view.jpg" 
+                src="lovable-uploads/business-executives-interacting-with-each-other.jpg" 
                 alt="Business transformation vertical" 
                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:shadow-harmony-cyan/30"
                 style={{ borderRadius: '16px' }}
