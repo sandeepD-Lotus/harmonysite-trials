@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="w-full h-full bg-gradient-to-r from-transparent via-harmony-cyan to-transparent animate-pulse"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-20 pb-16 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
           {/* Left Content */}
           <div className="text-left animate-slide-in-right">
@@ -36,7 +36,7 @@ const HeroSection = () => {
 
           {/* Right Content - Vertical Rectangular Image */}
           <div className="relative animate-fade-in flex justify-center" style={{ animationDelay: '0.3s' }}>
-            <div className="relative w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5] overflow-hidden">
+            <div className="relative w-[320px] md:w-[360px] lg:w-[400px] aspect-[4/5]">
               <img 
                 src="lovable-uploads/executives-working-together-laptop.jpg" 
                 alt="Business transformation vertical" 

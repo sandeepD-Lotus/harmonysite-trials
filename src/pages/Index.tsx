@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -14,25 +13,25 @@ const Index = () => {
       <HeroSection />
       
       {/* Harmony Introduction Section */}
-      <div className="py-20 harmony-gradient relative">
+      <div className="py-16 md:py-20 harmony-gradient relative">
         <div className="absolute inset-0">
           <img 
             src="lovable-uploads/aerial-view-doctor-writing-patient-daily-report-checklist.jpg" 
             alt="Background" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-harmony-dark/80 via-harmony-navy/70 to-harmony-teal/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-harmony-dark/90 via-harmony-navy/85 to-harmony-teal/80"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h2 className="text-4xl text-harmony-cyan mb-6 font-normal">Who We Are</h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-200 text-lg leading-relaxed mb-6">
                 Harmony Consulting Solutions empowers businesses through insight, innovation, and intelligence. 
                 We specialize in business consulting, market research, AI integration, and strategic growth solutions 
                 to help organizations achieve sustainable growth and long-term success.
               </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-200 text-lg leading-relaxed">
                 Our team of experts brings decades of combined experience in transforming businesses across 
                 various industries, leveraging cutting-edge technology and proven methodologies to deliver 
                 exceptional results for our clients.
