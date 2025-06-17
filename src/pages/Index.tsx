@@ -17,7 +17,7 @@ const Index = () => {
       <div className="py-20 harmony-gradient relative">
         <div className="absolute inset-0">
           <img 
-            src="lovable-uploads/19449741.jpg" 
+            src="public/lovable-uploads/aerial-view-doctor-writing-patient-daily-report-checklist.jpg" 
             alt="Background" 
             className="w-full h-full object-cover opacity-30"
           />
