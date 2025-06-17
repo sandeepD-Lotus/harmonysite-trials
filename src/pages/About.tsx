@@ -74,7 +74,7 @@ const About = () => {
                 {
                   name: 'Michael Chen',
                   role: 'Chief Technology Officer',
-                  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+                  image: 'lovable-uploads/Screenshot_9.jpg',
                   bio: 'Technology expert specializing in AI, cloud computing, and digital innovation. Michael holds multiple patents in machine learning and has published extensively in tech journals.'
                 },
                 {
