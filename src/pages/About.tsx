@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -14,45 +13,6 @@ const About = () => {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Empowering businesses through insight, innovation, and intelligence since our founding.
             </p>
-          </div>
-
-          {/* About Us Section with Images */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-bold text-harmony-cyan mb-12 text-center">About Us</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Lotus Wave is the fastest-growing IT Solutions provider focusing on Omnichannel and Digital first 
-                  approaches. We partner with our clients' innovation teams using our in-depth understanding of the 
-                  constantly evolving digital landscape, consumer behavior, and established and emerging technology.
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  We provide solutions for IT Projects from inception to production support (i.e., Design, 
-                  Development, QA testing and automation, DevOps, Production Support, and Release management).
-                </p>
-                <p className="text-blue-400 text-lg font-semibold">
-                  We serve from the startups to the Fortune 500's of the world.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="relative overflow-hidden rounded-lg border border-harmony-cyan/30 hover:border-harmony-cyan transition-all duration-300">
-                  <img 
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=300&fit=crop&crop=center"
-                    alt="Business meeting and collaboration"
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-harmony-navy/20"></div>
-                </div>
-                <div className="relative overflow-hidden rounded-lg border border-harmony-cyan/30 hover:border-harmony-cyan transition-all duration-300">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop&crop=center"
-                    alt="Team collaboration and innovation"
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-harmony-navy/20"></div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="mb-20">
