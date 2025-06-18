@@ -16,6 +16,45 @@ const About = () => {
             </p>
           </div>
 
+          {/* About Us Section with Images */}
+          <div className="mb-20">
+            <h2 className="text-4xl font-bold text-harmony-cyan mb-12 text-center">About Us</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Lotus Wave is the fastest-growing IT Solutions provider focusing on Omnichannel and Digital first 
+                  approaches. We partner with our clients' innovation teams using our in-depth understanding of the 
+                  constantly evolving digital landscape, consumer behavior, and established and emerging technology.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  We provide solutions for IT Projects from inception to production support (i.e., Design, 
+                  Development, QA testing and automation, DevOps, Production Support, and Release management).
+                </p>
+                <p className="text-blue-400 text-lg font-semibold">
+                  We serve from the startups to the Fortune 500's of the world.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-lg border border-harmony-cyan/30 hover:border-harmony-cyan transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=300&fit=crop&crop=center"
+                    alt="Business meeting and collaboration"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-harmony-navy/20"></div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg border border-harmony-cyan/30 hover:border-harmony-cyan transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop&crop=center"
+                    alt="Team collaboration and innovation"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-harmony-navy/20"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-20">
             <h2 className="text-4xl font-bold text-harmony-cyan mb-8 text-center">Company Overview</h2>
             <div className="max-w-4xl mx-auto">
@@ -85,14 +124,14 @@ const About = () => {
                 }
               ].map((member, index) => (
                 <div key={index} className="text-center bg-harmony-navy/50 p-8 rounded-lg border border-harmony-cyan/30">
-                  <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full border-4 border-harmony-cyan">
+                  <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 overflow-hidden rounded-full border-4 border-harmony-cyan">
                     <img 
                       src={member.image} 
                       alt={member.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=128&background=00FFFF&color=1a365d&bold=true`;
+                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=192&background=00FFFF&color=1a365d&bold=true`;
                       }}
                     />
                   </div>
