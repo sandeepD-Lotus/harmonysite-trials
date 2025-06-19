@@ -113,15 +113,15 @@ const About = () => {
                 },
                 {
                   name: 'Global Tech Solutions Inc',
-                  image: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=400&fit=crop&crop=center'
+                  image: 'lovable-uploads/Screenshot_16.jpg'
                 },
                 {
                   name: 'Healthcare Innovation Group',
-                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=center'
+                  image: 'lovable-uploads/Screenshot_17.jpg'
                 },
                 {
                   name: 'Financial Services Alliance',
-                  image: 'https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=center'
+                  image: 'lovable-uploads/Screenshot_18.jpg'
                 },
                 {
                   name: 'Renewable Energy Consortium',
