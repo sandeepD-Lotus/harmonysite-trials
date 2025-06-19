@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -84,14 +85,14 @@ const About = () => {
                 }
               ].map((member, index) => (
                 <div key={index} className="text-center bg-harmony-navy/50 p-8 rounded-lg border border-harmony-cyan/30">
-                  <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 overflow-hidden rounded-full border-4 border-harmony-cyan">
+                  <div className="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-6 overflow-hidden rounded-full border-4 border-harmony-cyan">
                     <img 
                       src={member.image} 
                       alt={member.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=192&background=00FFFF&color=1a365d&bold=true`;
+                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=224&background=00FFFF&color=1a365d&bold=true`;
                       }}
                     />
                   </div>
@@ -122,22 +123,6 @@ const About = () => {
                 {
                   name: 'Financial Services Alliance',
                   image: 'lovable-uploads/Screenshot_18.jpg'
-                },
-                {
-                  name: 'Renewable Energy Consortium',
-                  image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
-                },
-                {
-                  name: 'Retail Excellence Network',
-                  image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=400&fit=crop&crop=center'
-                },
-                {
-                  name: 'Transportation Systems Ltd',
-                  image: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=400&fit=crop&crop=center'
-                },
-                {
-                  name: 'Education Technology Partners',
-                  image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=center'
                 }
               ].map((client, index) => (
                 <div key={index} className="text-center p-6 border border-harmony-cyan/30 rounded-lg hover:border-harmony-cyan transition-all duration-300">
