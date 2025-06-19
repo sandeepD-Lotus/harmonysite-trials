@@ -73,13 +73,13 @@ const About = () => {
                 {
                   name: 'Michael Chen',
                   role: 'Chief Technology Officer',
-                  image: 'lovable-uploads/Screenshot_10.jpg',
+                  image: 'lovable-uploads/Screenshot_14.jpg',
                   bio: 'Technology expert specializing in AI, cloud computing, and digital innovation. Michael holds multiple patents in machine learning and has published extensively in tech journals.'
                 },
                 {
                   name: 'Emily Rodriguez',
                   role: 'Chief Operations Officer',
-                  image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
+                  image: 'lovable-uploads/Screenshot_14.jpg',
                   bio: 'Operations specialist focused on process optimization and client success. Emily has streamlined operations for over 100 organizations, improving efficiency by an average of 40%.'
                 }
               ].map((member, index) => (
