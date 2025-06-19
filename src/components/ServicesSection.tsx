@@ -17,7 +17,7 @@ const ServicesSection = () => {
     {
       title: "IT Consulting",
       description: "Strategic technology consulting to align your IT infrastructure with business goals and drive digital transformation.",
-      image: "/lovable-uploads/hands.jpg"
+      image: "/lovable-uploads/creative-designers.jpg"
     }
   ];
 
