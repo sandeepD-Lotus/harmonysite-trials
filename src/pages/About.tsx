@@ -109,7 +109,7 @@ const About = () => {
               {[
                 {
                   name: 'Fortune 500 Manufacturing Corp',
-                  image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=400&fit=crop&crop=center'
+                  image: 'lovable-uploads/Screenshot_15.jpg'
                 },
                 {
                   name: 'Global Tech Solutions Inc',
