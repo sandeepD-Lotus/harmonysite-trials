@@ -9,10 +9,7 @@ const CTASection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-harmony-cyan mb-8 leading-tight">
-            Grab the reader's attention with a<br />
-            descriptive line that hypes your event,<br />
-            product or service. A short and<br />
-            relevant quote works, too!
+            Driving Smarter Decisions for Sustainable Business Growth<br />
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
