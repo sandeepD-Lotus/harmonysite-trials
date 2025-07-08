@@ -4,10 +4,8 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
-
 const Connect = () => {
-  return (
-    <div className="min-h-screen harmony-gradient">
+  return <div className="min-h-screen harmony-gradient">
       <Navigation />
       <div className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -17,10 +15,7 @@ const Connect = () => {
               <h1 className="text-5xl font-bold text-harmony-cyan mb-6">Let's work together!</h1>
               <p className="text-xl text-white mb-8">Book a free consultation.</p>
               
-              <Button
-                size="lg"
-                className="bg-transparent border-2 border-harmony-cyan text-harmony-cyan hover:bg-harmony-cyan hover:text-white transition-all duration-300 mb-12"
-              >
+              <Button size="lg" className="bg-transparent border-2 border-harmony-cyan text-harmony-cyan hover:bg-harmony-cyan hover:text-white transition-all duration-300 mb-12">
                 contact us
               </Button>
 
@@ -28,7 +23,7 @@ const Connect = () => {
               <div className="space-y-8">
                 <div>
                   <h3 className="text-harmony-cyan font-semibold mb-2">PHONE</h3>
-                  <p className="text-white text-lg">123-456-789</p>
+                  <p className="text-white text-lg">123-456-78910</p>
                 </div>
                 
                 <div>
@@ -56,12 +51,9 @@ const Connect = () => {
             {/* Right Content - Image */}
             <div className="flex justify-center lg:justify-end items-center h-full">
               <div className="w-56 sm:w-64 md:w-80 lg:w-96 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl bg-harmony-navy/20 flex items-center justify-center">
-                <img
-                  src="/lovable-uploads/operator-enjoying-work-process_249974-23240.avif"
-                  alt="Let's work together vertical"
-                  className="object-cover w-full h-full"
-                  style={{ objectPosition: 'center top' }}
-                />
+                <img src="/lovable-uploads/operator-enjoying-work-process_249974-23240.avif" alt="Let's work together vertical" className="object-cover w-full h-full" style={{
+                objectPosition: 'center top'
+              }} />
               </div>
             </div>
           </div>
@@ -75,38 +67,22 @@ const Connect = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-harmony-cyan font-medium mb-2">First Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                        placeholder="Your first name"
-                      />
+                      <input type="text" className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" placeholder="Your first name" />
                     </div>
                     <div>
                       <label className="block text-harmony-cyan font-medium mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                        placeholder="Your last name"
-                      />
+                      <input type="text" className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" placeholder="Your last name" />
                     </div>
                   </div>
                   
                   <div>
                     <label className="block text-harmony-cyan font-medium mb-2">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                      placeholder="your.email@example.com"
-                    />
+                    <input type="email" className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" placeholder="your.email@example.com" />
                   </div>
                   
                   <div>
                     <label className="block text-harmony-cyan font-medium mb-2">Company</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                      placeholder="Your company name"
-                    />
+                    <input type="text" className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" placeholder="Your company name" />
                   </div>
                   
                   <div>
@@ -123,18 +99,10 @@ const Connect = () => {
                   
                   <div>
                     <label className="block text-harmony-cyan font-medium mb-2">Message</label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                      placeholder="Tell us about your project and how we can help..."
-                    ></textarea>
+                    <textarea rows={4} className="w-full px-4 py-3 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" placeholder="Tell us about your project and how we can help..."></textarea>
                   </div>
                   
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white"
-                  >
+                  <Button type="submit" size="lg" className="w-full bg-harmony-cyan hover:bg-harmony-cyan/80 text-white">
                     Send Message
                   </Button>
                 </form>
@@ -151,11 +119,7 @@ const Connect = () => {
                   Subscribe to our newsletter for industry insights, company updates, and exclusive content.
                 </p>
                 <div className="flex gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-2 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan"
-                  />
+                  <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-2 bg-harmony-navy border border-harmony-cyan/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-harmony-cyan" />
                   <Button className="bg-harmony-cyan hover:bg-harmony-cyan/80 text-white">
                     Subscribe
                   </Button>
@@ -166,8 +130,6 @@ const Connect = () => {
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Connect;
